@@ -1,9 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
-  component: App
+	component: App
 });
 
 function App() {
-	return <div>Hello world</div>;
+	return (
+		<div>
+			<p className="para-italic">Hello world</p>
+		</div>
+	);
 }
