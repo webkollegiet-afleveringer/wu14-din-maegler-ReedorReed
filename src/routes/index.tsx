@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import hero from "../assets/hero_1.png";
+import { Button } from "#/components/ui/Button";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -32,12 +33,9 @@ function App() {
               placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignende"
               className="w-182 h-12 border border-shape-color1 p-3 para-02"
             />
-            <button
-              type="submit"
-              className="bg-primary-color1 text-white w-30 h-12 cursor-pointer"
-            >
+            <Button variant="default" size="sm">
               Søg
-            </button>
+            </Button>
           </form>
         </article>
       </article>
