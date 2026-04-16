@@ -9,6 +9,9 @@
 	--general-color2: #000000;
 	--general-color3: #f21515;
 	--general-color4: #15f26e;
+	--general-color5: #f2c94c;
+	--general-color6: #f2994a;
+	--general-color7: #eb5757;
 
 	/*Primary Colors*/
 	--primary-color1: #162a41;
@@ -49,6 +52,9 @@
 	--color-general-color2: var(--general-color2);
 	--color-general-color3: var(--general-color3);
 	--color-general-color4: var(--general-color4);
+	--color-general-color5: var(--general-color5);
+	--color-general-color6: var(--general-color6);
+	--color-general-color7: var(--general-color7);
 
 	/*Primary Colors*/
 	--color-primary-color1: var(--primary-color1);
