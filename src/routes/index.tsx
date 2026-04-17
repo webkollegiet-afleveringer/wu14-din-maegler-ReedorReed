@@ -4,6 +4,8 @@ import { Button } from '#/components/ui/Button';
 import About from '#/components/About';
 import SelectHomes from '#/components/SelectHomes';
 import Subscribe from '#/components/Subscribe';
+import OurAgents from '#/components/OurAgents';
+import GetAppComponent from '#/components/GetAppComponent';
 
 export const Route = createFileRoute('/')({
 	component: App
@@ -47,6 +49,8 @@ function App() {
 			<About />
 			<SelectHomes />
 			<Subscribe />
+			<OurAgents />
+			<GetAppComponent />
 		</main>
 	);
 }
