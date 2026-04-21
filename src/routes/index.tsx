@@ -6,6 +6,7 @@ import SelectHomes from '#/components/SelectHomes';
 import Subscribe from '#/components/Subscribe';
 import OurAgents from '#/components/OurAgents';
 import GetAppComponent from '#/components/GetAppComponent';
+import Footer from '#/components/Footer';
 
 export const Route = createFileRoute('/')({
 	component: App
@@ -51,6 +52,7 @@ function App() {
 			<Subscribe />
 			<OurAgents />
 			<GetAppComponent />
+			<Footer />
 		</main>
 	);
 }

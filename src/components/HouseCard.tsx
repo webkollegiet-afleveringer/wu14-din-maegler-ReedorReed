@@ -3,7 +3,11 @@ import { getHomes, getHomesCount } from '../lib/api';
 import type { Home } from '#/lib/types';
 import { cn, getEnergyLabelClass } from '../lib/utils';
 
-export default function Card() {
+type HouseCardProps = {
+	limit?: number;
+};
+
+export default function Card({ limit = 4 }: HouseCardProps) {
 	const [homes, setHomes] = useState<Home[]>([]);
 	const [count, setCount] = useState(0);
 	const [loading, setLoading] = useState(true);
@@ -11,9 +15,12 @@ export default function Card() {
 
 	useEffect(() => {
 		async function fetchData() {
+			setLoading(true);
+			setError(null);
+
 			try {
 				const [homesData, countData] = await Promise.all([
-					getHomes({ _limit: 4 }),
+					getHomes({ _limit: limit }),
 					getHomesCount()
 				]);
 				setHomes(homesData);
@@ -25,7 +32,7 @@ export default function Card() {
 			}
 		}
 		fetchData();
-	}, []);
+	}, [limit]);
 
 	if (loading) return <div>Loading...</div>;
 	if (error) return <div>Error: {error}</div>;
@@ -69,12 +76,12 @@ export default function Card() {
 										)}>
 										{home.energylabel}
 									</div>
-									<p className='para-02'>
+									<p className="para-02">
 										{home.rooms} værelser · {home.livingspace} m²
 									</p>
 								</div>
 								<div>
-									<p className='para-06'>{home.price.toLocaleString()} kr.</p>
+									<p className="para-06">{home.price.toLocaleString()} kr.</p>
 								</div>
 							</div>
 						</article>

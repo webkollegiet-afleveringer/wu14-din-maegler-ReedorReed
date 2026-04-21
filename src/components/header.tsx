@@ -40,7 +40,7 @@ export default function Header() {
 					</figure>
 				</Link>
 				<div className="flex gap-10.25">
-					<Link to="/boliger">Boliger til salg</Link>
+					<Link to="/propertyList">Boliger til salg</Link>
 					<Link to="/maeglere">Mæglere</Link>
 					<Link to="/favorites">Mine Favoritter</Link>
 					<Link to="/contact">Kontakt os</Link>
