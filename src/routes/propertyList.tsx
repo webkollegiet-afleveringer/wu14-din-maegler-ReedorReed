@@ -1,5 +1,6 @@
 import Footer from '#/components/Footer';
 import HouseCard from '#/components/HouseCard';
+import FavoritesButton from '#/components/ui/FavoritesButton.tsx';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/propertyList')({
@@ -16,8 +17,8 @@ function RouteComponent() {
 			</div>
 			<article className="px-50 mx-18.75">
 				<h2 className="text-heading-color2 head-04 font-medium mb-5">
-					<span className="border-b-4 border-primary-color1 py-1">Søg</span> efter dit
-					drømmehus
+					<span className="border-b-4 border-primary-color1 py-1">Søg</span>{' '}
+					efter dit drømmehus
 				</h2>
 				<div className="border-shape-color1 bg-general-color1 mb-10">
 					<div className="flex gap-20">

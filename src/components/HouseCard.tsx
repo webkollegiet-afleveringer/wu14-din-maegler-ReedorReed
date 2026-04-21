@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getHomes, getHomesCount } from '../lib/api';
 import type { Home } from '#/lib/types';
 import { cn, getEnergyLabelClass } from '../lib/utils';
+import FavoritesButton from './ui/FavoritesButton';
 
 type HouseCardProps = {
 	limit?: number;
@@ -41,13 +42,16 @@ export default function Card({ limit = 4 }: HouseCardProps) {
 		<section className="flex w-full justify-center">
 			<article className="grid grid-cols-2 grid-rows-2 gap-7.5">
 				{homes.map((home) => (
-					<div key={home.id} className="bg-general-color1 w-135">
-						<figure>
+					<div key={home.id} className="bg-general-color1 w-135 rounded-md">
+						<figure className="relative">
 							<img
 								src={home.images[0]?.url}
 								alt={home.adress1}
-								className="w-full h-48 object-cover"
+								className="w-full h-48 object-cover rounded-t-md"
 							/>
+							<figcaption className="absolute top-4 right-4 z-10">
+								<FavoritesButton />
+							</figcaption>
 						</figure>
 
 						<article className="p-6">
