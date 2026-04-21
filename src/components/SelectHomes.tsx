@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import Card from './HouseCard';
 import { Button } from './ui/Button';
 
@@ -15,8 +16,9 @@ export default function SelectHomes() {
 			<article className="flex flex-col w-full justify-center">
 				<Card />
 			</article>
-
-			<Button className="mb-30">Se alle boliger</Button>
+			<Link to="/propertyList">
+				<Button className="mb-30">Se alle boliger</Button>
+			</Link>
 		</section>
 	);
 }

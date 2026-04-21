@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PropertyListRouteImport } from './routes/propertyList'
+import { Route as CoWorkersRouteImport } from './routes/coWorkers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PropertyListRoute = PropertyListRouteImport.update({
   id: '/propertyList',
   path: '/propertyList',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoWorkersRoute = CoWorkersRouteImport.update({
+  id: '/coWorkers',
+  path: '/coWorkers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coWorkers': typeof CoWorkersRoute
   '/propertyList': typeof PropertyListRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coWorkers': typeof CoWorkersRoute
   '/propertyList': typeof PropertyListRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/coWorkers': typeof CoWorkersRoute
   '/propertyList': typeof PropertyListRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/propertyList'
+  fullPaths: '/' | '/about' | '/coWorkers' | '/propertyList'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/propertyList'
-  id: '__root__' | '/' | '/about' | '/propertyList'
+  to: '/' | '/about' | '/coWorkers' | '/propertyList'
+  id: '__root__' | '/' | '/about' | '/coWorkers' | '/propertyList'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CoWorkersRoute: typeof CoWorkersRoute
   PropertyListRoute: typeof PropertyListRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/propertyList'
       fullPath: '/propertyList'
       preLoaderRoute: typeof PropertyListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coWorkers': {
+      id: '/coWorkers'
+      path: '/coWorkers'
+      fullPath: '/coWorkers'
+      preLoaderRoute: typeof CoWorkersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CoWorkersRoute: CoWorkersRoute,
   PropertyListRoute: PropertyListRoute,
 }
 export const routeTree = rootRouteImport

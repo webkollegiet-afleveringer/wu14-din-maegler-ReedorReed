@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import AgentCard from './AgentCard';
 import { Button } from './ui/Button';
 
@@ -12,9 +13,11 @@ export default function OurAgents() {
 					Din Mægler er garant for altid veluddannet assistance i dit boligsalg.
 					Kontakt en af vores medarbejdere.
 				</p>
-            </article>
-            <AgentCard />
-			<Button className="mb-30">Se alle mæglere</Button>
+			</article>
+			<AgentCard />
+			<Link to="/coWorkers">
+				<Button className="mb-30">Se alle mæglere</Button>
+			</Link>
 		</section>
 	);
 }

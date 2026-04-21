@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
-import { getAgents, getAgentById } from '../lib/api';
+import { getAgents } from '../lib/api';
 import type { Agent } from '#/lib/types';
 import { FaEnvelope, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from '@tanstack/react-router';
 
-export default function AgentCard() {
+type AgentCardProps = {
+  limit?: number;
+};
+
+export default function AgentCard({ limit = 3 }: AgentCardProps) {
 	const [agents, setAgents] = useState<Agent[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -12,7 +16,7 @@ export default function AgentCard() {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const [agentsData] = await Promise.all([getAgents({ _limit: 3 })]);
+				const agentsData = await getAgents({ _limit: limit });
 				setAgents(agentsData);
 			} catch (err) {
 				setError(err instanceof Error ? err.message : 'Failed to load');
@@ -21,10 +25,11 @@ export default function AgentCard() {
 			}
 		}
 		fetchData();
-	}, []);
+	}, [limit]);
 
 	if (loading) return <div>Loading...</div>;
 	if (error) return <div>Error: {error}</div>;
+
 	return (
 		<div>
 			<div className="grid grid-cols-3 gap-7.5">

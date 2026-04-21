@@ -67,7 +67,7 @@ export async function getAgents(params?: AgentsParams): Promise<Agent[]> {
 }
 
 export async function getAgentById(id: string): Promise<Agent> {
-	const res = await fetch(`${BASE_URL}/agents/${id}`);
+	const res = await fetch(`${BASE_URL}/agents${id}`);
 	if (!res.ok) throw new Error('Failed to fetch agent');
 	return res.json();
 }
