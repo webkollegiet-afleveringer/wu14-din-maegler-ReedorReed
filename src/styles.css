@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+:root {
+	/*COLORS*/
+
+	/*General Colors*/
+	--general-color1: #ffffff;
+	--general-color2: #000000;
+	--general-color3: #f21515;
+	--general-color4: #15f26e;
+	--general-color5: #f2c94c;
+	--general-color6: #f2994a;
+	--general-color7: #eb5757;
+
+	/*Primary Colors*/
+	--primary-color1: #162a41;
+	--primary-color2: #fa983a;
+	--primary-color3: #a3cb38;
+	--primary-color4: #10ac84;
+
+	/*Heading Colors*/
+	--heading-color1: #263048;
+	--heading-color2: #2a2c30;
+
+	/*Paragraph Colors*/
+	--paragraph-color1: #333333;
+	--paragraph-color2: #7b7b7b;
+	--paragraph-color3: #d5e0ea;
+
+	/*Background Colors*/
+	--background-color1: #f8f8fb;
+	--background-color2: #f9fcff;
+	--background-color3: #25517a;
+
+	/*Shape Colors*/
+	--shape-color1: #d3dee8;
+	--shape-color2: #eef7ff;
+	--shape-color3: #33628d;
+
+	/*Multiply Colors*/
+	--multiply-color1: #33485c;
+	--multiply-color2: #51789d;
+	--multiply-color3: #465f78;
+	--multiply-color4: #444444;
+	--multiply-color5: #455463;
+}
+
+@theme {
+	/*General Colors*/
+	--color-general-color1: var(--general-color1);
+	--color-general-color2: var(--general-color2);
+	--color-general-color3: var(--general-color3);
+	--color-general-color4: var(--general-color4);
+	--color-general-color5: var(--general-color5);
+	--color-general-color6: var(--general-color6);
+	--color-general-color7: var(--general-color7);
+
+	/*Primary Colors*/
+	--color-primary-color1: var(--primary-color1);
+	--color-primary-color2: var(--primary-color2);
+	--color-primary-color3: var(--primary-color3);
+	--color-primary-color4: var(--primary-color4);
+
+	/*Heading Colors*/
+	--color-heading-color1: var(--heading-color1);
+	--color-heading-color2: var(--heading-color2);
+
+	/*Paragraph Colors*/
+	--color-paragraph-color1: var(--paragraph-color1);
+	--color-paragraph-color2: var(--paragraph-color2);
+	--color-paragraph-color3: var(--paragraph-color3);
+
+	/*Background Colors*/
+	--color-background-color1: var(--background-color1);
+	--color-background-color2: var(--background-color2);
+	--color-background-color3: var(--background-color3);
+
+	/*Shape Colors*/
+	--color-shape-color1: var(--shape-color1);
+	--color-shape-color2: var(--shape-color2);
+	--color-shape-color3: var(--shape-color3);
+
+	/*Multiply Colors*/
+	--color-multiply-color1: var(--multiply-color1);
+	--color-multiply-color2: var(--multiply-color2);
+	--color-multiply-color3: var(--multiply-color3);
+	--color-multiply-color4: var(--multiply-color4);
+	--color-multiply-color5: var(--multiply-color5);
+
+	/*Font*/
+	--font-roboto: 'Roboto', sans-serif;
+}
+
+@layer utilities {
+	.main-heading-01 {
+		@apply font-roboto font-bold text-6xl leading-20 tracking-normal;
+	}
+	.main-heading-02 {
+		@apply font-roboto font-bold text-[3.125rem] leading-16.5 tracking-normal;
+	}
+	.main-heading-03 {
+		@apply font-roboto font-bold text-[1.5rem] leading-12.5 tracking-normal;
+	}
+	.main-heading-04 {
+		@apply font-roboto font-bold text-[2.875rem] leading-13.5 tracking-normal;
+	}
+	.main-heading-05 {
+		@apply font-roboto font-bold text-[12.5rem] leading-50 tracking-normal;
+	}
+	.button-font-01 {
+		@apply font-roboto font-medium text-[1.125rem] leading-7.5 tracking-normal;
+	}
+	.button-font-02 {
+		@apply font-roboto font-normal text-[0.875rem] leading-6 tracking-normal;
+	}
+
+	/*Heading*/
+	.head-01 {
+		@apply font-roboto font-bold text-[2.375rem] leading-13.5 tracking-normal;
+	}
+	.head-02 {
+		@apply font-roboto font-medium text-[1.875rem] leading-10.5 tracking-normal;
+	}
+	.head-03 {
+		@apply font-roboto font-medium text-[1.5rem] leading-8 tracking-normal;
+	}
+	.head-04 {
+		@apply font-roboto font-medium text-[1.25rem] leading-7.5 tracking-normal;
+	}
+	.head-05 {
+		@apply font-roboto font-medium text-[1rem] leading-6.5 tracking-normal;
+	}
+
+	/*Paragraph*/
+	.para-01 {
+		@apply font-roboto font-normal text-[1.25rem] leading-7.5 tracking-normal;
+	}
+	.para-02 {
+		@apply font-roboto font-normal text-[1rem] leading-7 tracking-normal;
+	}
+	.para-03 {
+		@apply font-roboto font-normal text-[0.875rem] leading-6 tracking-normal;
+	}
+	.para-04 {
+		@apply font-roboto font-normal text-[0.75rem] leading-5 tracking-normal;
+	}
+	.para-05 {
+		@apply font-roboto font-normal text-[1.5rem] leading-8 tracking-normal;
+	}
+	.para-06 {
+		@apply font-roboto font-medium text-[1.25rem] leading-7.5 tracking-normal;
+	}
+	.para-italic {
+		@apply font-roboto italic text-[1.25rem] leading-8 tracking-normal;
+	}
+}
